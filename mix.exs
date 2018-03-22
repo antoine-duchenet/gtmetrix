@@ -17,7 +17,7 @@ defmodule GTmetrix.MixProject do
   end
 
   defp description() do
-    "GTmetrix REST API client.",
+    "GTmetrix REST API client."
   end
 
   defp package() do
