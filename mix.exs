@@ -11,7 +11,7 @@ defmodule GTmetrix.MixProject do
       source_url: "https://github.com/antoine-duchenet/gtmetrix",
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
-      build_embedded: Mix.env == :prod,
+      build_embedded: Mix.env() == :prod,
       deps: deps()
     ]
   end
