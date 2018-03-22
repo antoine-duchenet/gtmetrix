@@ -23,7 +23,7 @@ defmodule GTmetrix.MixProject do
   defp package() do
     [
       # This option is only needed when you don't want to use the OTP application name
-      name: "postgrex",
+      name: "gtmetrix",
       maintainers: ["Antoine Duchenet"],
       licenses: ["Apache 2.0"],
       links: %{"GitHub" => "https://github.com/antoine-duchenet/gtmetrix"}
