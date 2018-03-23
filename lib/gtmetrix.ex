@@ -13,8 +13,12 @@ defmodule GTmetrix do
 end
 
 defmodule GTmetrix.Test do
-  def start(url) do
-    body = {:form, [url: url]}
+  def start(url) when is_bitstring(url) do
+    start([url: url])
+  end
+
+  def start(params) when is_list(params) do
+    body = {:form, params}
 
     case GTmetrix.post("/test", body, []) do
       {:ok, response} -> Poison.decode!(response.body)
@@ -26,7 +30,7 @@ defmodule GTmetrix.Test do
     fetch_results(test_id)
   end
 
-  def fetch_results(test_id) do
+  def fetch_results(test_id) when is_bitstring(test_id) do
     case GTmetrix.get("/test/" <> test_id, []) do
       {:ok, response} -> Poison.decode!(response.body)
       {_, response} -> response
