@@ -14,7 +14,7 @@ end
 
 defmodule GTmetrix.Test do
   def start(url) when is_bitstring(url) do
-    start([url: url])
+    start(url: url)
   end
 
   def start(params) when is_list(params) do

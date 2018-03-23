@@ -15,7 +15,7 @@ defmodule GTmetrixTest.Test do
 
   test "Start a test with full options" do
     :timer.sleep(10000)
-    data = GTmetrix.Test.start([url: "www.google.fr"])
+    data = GTmetrix.Test.start(url: "www.google.fr")
     assert_is_test(data)
   end
 
@@ -34,7 +34,9 @@ defmodule GTmetrixTest.Test do
   end
 
   def assert_is_test(arg) do
-    %{"credits_left" => credits_left, "poll_state_url" => poll_state_url, "test_id" => test_id} = arg
+    %{"credits_left" => credits_left, "poll_state_url" => poll_state_url, "test_id" => test_id} =
+      arg
+
     assert(is_integer(credits_left))
     assert(is_bitstring(poll_state_url))
     assert(is_bitstring(test_id))
