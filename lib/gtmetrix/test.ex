@@ -9,7 +9,7 @@ defmodule GTmetrix.Test do
   end
 
   def state(%{"test_id" => test_id}) do
-    fetch_results(test_id)
+    state(test_id)
   end
 
   def state(test_id) do
