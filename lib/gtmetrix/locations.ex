@@ -1,4 +1,4 @@
-defmodule GTmetrix.Browsers do
+defmodule GTmetrix.Locations do
   def list() do
     case GTmetrix.get("/locations", []) do
       {:ok, response} -> Poison.decode!(response.body)
