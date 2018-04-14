@@ -18,8 +18,8 @@ defmodule GTmetrixTest.Test do
 
   test "Fetch test results" do
     test = GTmetrix.Test.start("www.google.fr")
-    GTmetrix.Test.fetch_results(test)
+    GTmetrix.Test.state(test)
     %{"test_id" => test_id} = test
-    GTmetrix.Test.fetch_results(test_id)
+    GTmetrix.Test.state(test_id)
   end
 end
