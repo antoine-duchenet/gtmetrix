@@ -16,10 +16,29 @@ defmodule GTmetrixTest.Test do
     assert(is_bitstring(test_id))
   end
 
-  test "Fetch test results" do
+  test "Fetch test state and supported resources" do
     test = GTmetrix.Test.start("www.google.fr")
     GTmetrix.Test.state(test)
     %{"test_id" => test_id} = test
     GTmetrix.Test.state(test_id)
+    GTmetrix.Test.resource(test_id, "har")
+    GTmetrix.Test.resource(test_id, "pagespeed")
+    GTmetrix.Test.resource(test_id, "yslow")
+  end
+
+  test "List locations" do
+    GTmetrix.Locations.list()
+  end
+
+  test "List browsers" do
+    GTmetrix.Browsers.list()
+  end
+
+  test "Fetch browser details" do
+    GTmetrix.Browsers.details(1)
+  end
+
+  test "Fetch accout status" do
+    GTmetrix.Account.status()
   end
 end
