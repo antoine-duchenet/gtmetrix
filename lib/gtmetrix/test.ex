@@ -18,4 +18,11 @@ defmodule GTmetrix.Test do
       {_, response} -> response
     end
   end
+
+  def resource(test_id, resource) do
+    case GTmetrix.get("/test/" <> test_id <> "/" <> resource, []) do
+      {:ok, response} -> Poison.decode!(response.body)
+      {_, response} -> response
+    end
+  end
 end
