@@ -5,7 +5,7 @@ defmodule GTmetrix.MixProject do
     [
       app: :gtmetrix,
       name: "GTmetrix",
-      version: "0.1.0",
+      version: "1.0.0",
       description: description(),
       package: package(),
       source_url: "https://github.com/antoine-duchenet/gtmetrix",
